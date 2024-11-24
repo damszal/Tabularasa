@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@wix/data": "^1.0.169",
+    "@wix/sdk": "^1.14.4",
     "astro": "^4.16.13",
     "typescript": "^5.7.2"
   },
