@@ -2,14 +2,14 @@
 import BlogPost from "./BlogPost.astro"
 import fetchArticles from "../lib/fetchArticle";
 const posts = await fetchArticles();
-function stripHTML(content) {
-  return content.replace(/<\/?[^>]+(>|$)/g, ''); // Usuwa wszystkie znaczniki HTML
+function stripHTML(content:string) {
+  return content.replace(/<\/?[^>]+(>|$)/g, ''); 
 }
 ---
 <td class="content">
     {posts.map((post) => {
-      const cleanContent = stripHTML(post.data.content); // Usuwamy znaczniki HTML
-      return <BlogPost title={post.data.title1} content={cleanContent}></BlogPost>;
+      const cleanContent = stripHTML(post.data?.content); 
+      return <BlogPost title={post.data?.title1} content={cleanContent}></BlogPost>;
     })}
   </td>
 
